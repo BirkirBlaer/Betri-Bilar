@@ -45,3 +45,5 @@ next-env.d.ts
 photos-inbox/*
 !photos-inbox/.gitkeep
 betri-bilar.zip
+# Local preview screenshots
+preview/
