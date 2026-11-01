@@ -44,3 +44,4 @@ next-env.d.ts
 # Raw photos dropped in for processing (processed versions live in public/images)
 photos-inbox/*
 !photos-inbox/.gitkeep
+betri-bilar.zip
