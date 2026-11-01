@@ -3,11 +3,62 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/*
+ * Betri Bílar — design tokens
+ * paper     concrete-floor off-white
+ * ink       near-black (dark sections)
+ * charcoal  body text on paper
+ * steel     industrial grey (secondary text, rules)
+ * signal    lift / safety-marking yellow — the only accent. Use sparingly.
+ */
+:root {
+  --paper: #e9e8e3;
+  --paper-2: #dfded8;
+  --ink: #151612;
+  --ink-2: #1e1f1b;
+  --charcoal: #24251f;
+  --steel: #6b6d66;
+  --steel-light: #a3a59e;
+  --signal: #e3b52b;
+  --rule-light: rgb(36 37 31 / 0.16);
+  --rule-dark: rgb(233 232 227 / 0.14);
+
+  /* shadcn/ui mapping */
+  --radius: 0.25rem;
+  --background: var(--paper);
+  --foreground: var(--charcoal);
+  --card: var(--paper);
+  --card-foreground: var(--charcoal);
+  --popover: var(--paper);
+  --popover-foreground: var(--charcoal);
+  --primary: var(--ink);
+  --primary-foreground: var(--paper);
+  --secondary: var(--paper-2);
+  --secondary-foreground: var(--charcoal);
+  --muted: var(--paper-2);
+  --muted-foreground: var(--steel);
+  --accent: var(--signal);
+  --accent-foreground: var(--ink);
+  --destructive: #b3261e;
+  --border: var(--rule-light);
+  --input: var(--rule-light);
+  --ring: var(--signal);
+}
+
 @theme inline {
+  --color-paper: var(--paper);
+  --color-paper-2: var(--paper-2);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-charcoal: var(--charcoal);
+  --color-steel: var(--steel);
+  --color-steel-light: var(--steel-light);
+  --color-signal: var(--signal);
+  --color-rule-light: var(--rule-light);
+  --color-rule-dark: var(--rule-dark);
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
   --color-popover: var(--popover);
@@ -24,60 +75,124 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-}
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
 
-:root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-}
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
 
-.dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
+  /* Type scale (perfect fourth, fluid at the top end) */
+  --text-display: clamp(4.25rem, 15.5vw, 15.5rem);
+  --text-h1: clamp(2.75rem, 7vw, 6.5rem);
+  --text-h2: clamp(2.125rem, 4.6vw, 4.25rem);
+  --text-h3: clamp(1.5rem, 2.4vw, 2.25rem);
+  --text-lede: clamp(1.125rem, 1.5vw, 1.375rem);
+
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
 }
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border;
+  }
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: 5rem;
+  }
+  html:not(.lenis) {
+    scroll-behavior: smooth;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html:not(.lenis) {
+      scroll-behavior: auto;
+    }
   }
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-paper text-charcoal font-sans antialiased;
+    font-feature-settings: "ss01", "cv11";
+    text-rendering: optimizeLegibility;
+  }
+  ::selection {
+    background: var(--signal);
+    color: var(--ink);
+  }
+  :focus-visible {
+    outline: 2px solid var(--signal);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+  h1, h2, h3 {
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+}
+
+/* Lenis */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+@layer components {
+  .wrap {
+    width: 100%;
+    max-width: 92rem;
+    margin-inline: auto;
+    padding-inline: clamp(1rem, 4vw, 3.5rem);
+  }
+  .grid-12 {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: clamp(0.75rem, 2vw, 2rem);
+  }
+  .display {
+    font-size: var(--text-display);
+    line-height: 0.82;
+    letter-spacing: -0.055em;
+    font-weight: 600;
+  }
+  .h1 {
+    font-size: var(--text-h1);
+    line-height: 0.95;
+    letter-spacing: -0.045em;
+    font-weight: 560;
+  }
+  .h2 {
+    font-size: var(--text-h2);
+    line-height: 1;
+    letter-spacing: -0.04em;
+    font-weight: 540;
+  }
+  .h3 {
+    font-size: var(--text-h3);
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    font-weight: 540;
+  }
+  .lede {
+    font-size: var(--text-lede);
+    line-height: 1.45;
+    letter-spacing: -0.012em;
+  }
+  .meta {
+    font-size: 0.8125rem;
+    line-height: 1.4;
+    letter-spacing: 0.005em;
+  }
+  /* Graded photo — keeps colour consistent across photos taken on different phones */
+  .photo-grade {
+    filter: saturate(0.92) contrast(1.03);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

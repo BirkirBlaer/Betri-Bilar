@@ -1,4 +1,9 @@
-# Vibe coding
+# Vibe coding — Betri Bílar website
+
+Icelandic one-page site for Betri Bílar (car repair workshop, Skeifan 5c). Read README.md first.
+- All copy and company facts: `src/content/site.ts`. Never add unverified facts, reviews or stats; mark uncertain items `verified: false`.
+- Photos only via `npm run photos` (photos-inbox → public/images). Never use stock or AI imagery.
+- Research and sources: `docs/FACT-SHEET.md`.
 
 Next.js (App Router, `src/`), TypeScript, Tailwind CSS v4, shadcn/ui.
 

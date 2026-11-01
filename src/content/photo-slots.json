@@ -1,0 +1,122 @@
+[
+  {
+    "id": "hero-workshop",
+    "folder": "hero",
+    "aspect": [
+      16,
+      9
+    ],
+    "brief": "Víð mynd af verkstæðinu innanfrá, helst með bíl á lyftu.",
+    "alt": "Verkstæði Betri Bíla í Skeifunni"
+  },
+  {
+    "id": "intro-detail",
+    "folder": "workshop",
+    "aspect": [
+      4,
+      5
+    ],
+    "brief": "Nærmynd af handverki: hendur, verkfæri eða vélarhluti.",
+    "alt": "Unnið við bíl á verkstæði Betri Bíla"
+  },
+  {
+    "id": "service-repairs",
+    "folder": "services",
+    "aspect": [
+      4,
+      3
+    ],
+    "brief": "Bifvélavirki að vinna undir eða við bíl.",
+    "alt": "Bifvélavirki að störfum"
+  },
+  {
+    "id": "service-diagnostics",
+    "folder": "services",
+    "aspect": [
+      4,
+      3
+    ],
+    "brief": "Greiningartölva tengd við bíl eða skjár með bilanakóðum.",
+    "alt": "Bilanagreining með greiningartölvu"
+  },
+  {
+    "id": "service-maintenance",
+    "folder": "services",
+    "aspect": [
+      4,
+      3
+    ],
+    "brief": "Olíuskipti, síur eða vélarrými.",
+    "alt": "Reglubundið viðhald á vél"
+  },
+  {
+    "id": "service-brakes",
+    "folder": "services",
+    "aspect": [
+      4,
+      3
+    ],
+    "brief": "Hjól af, bremsudiskur eða fjöðrun sýnileg.",
+    "alt": "Viðgerð á hemlum og fjöðrun"
+  },
+  {
+    "id": "gallery-1",
+    "folder": "gallery",
+    "aspect": [
+      3,
+      2
+    ],
+    "brief": "Sterkasta myndin af verkstæðinu.",
+    "alt": "Verkstæði Betri Bíla"
+  },
+  {
+    "id": "gallery-2",
+    "folder": "gallery",
+    "aspect": [
+      4,
+      5
+    ],
+    "brief": "Bíll sem unnið hefur verið við (Volkswagen, Škoda, Audi eða Mitsubishi).",
+    "alt": "Bíll á verkstæði Betri Bíla"
+  },
+  {
+    "id": "gallery-3",
+    "folder": "gallery",
+    "aspect": [
+      1,
+      1
+    ],
+    "brief": "Nærmynd af íhlut eða verkfærum.",
+    "alt": "Verkfæri á verkstæðinu"
+  },
+  {
+    "id": "gallery-4",
+    "folder": "gallery",
+    "aspect": [
+      4,
+      5
+    ],
+    "brief": "Starfsfólk að vinnu (með leyfi þeirra).",
+    "alt": "Starfsfólk Betri Bíla að störfum"
+  },
+  {
+    "id": "gallery-5",
+    "folder": "gallery",
+    "aspect": [
+      3,
+      2
+    ],
+    "brief": "Bíll á lyftu eða verkstæðisgólf.",
+    "alt": "Bíll á lyftu"
+  },
+  {
+    "id": "gallery-6",
+    "folder": "gallery",
+    "aspect": [
+      1,
+      1
+    ],
+    "brief": "Framhlið hússins í Skeifunni eða skilti.",
+    "alt": "Betri Bílar, Skeifunni 5c"
+  }
+]
